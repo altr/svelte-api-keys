@@ -57,7 +57,8 @@
 		"test:ui": "vitest --ui",
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
-		"emulators:start": "firebase emulators:start --import ./snapshot --export-on-exit --project demo-project"
+		"emulators:start": "firebase emulators:start --import ./snapshot --export-on-exit --project demo-project",
+		"prepare": "npm run package"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.1",
