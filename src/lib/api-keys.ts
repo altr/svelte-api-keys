@@ -1,11 +1,6 @@
 import type { Handle, RequestEvent } from '@sveltejs/kit'
 import { randomBytes, createHash } from 'crypto'
 import basex from 'base-x'
-import BadWords from 'bad-words-next'
-import en from 'bad-words-next/data/en.json'
-import es from 'bad-words-next/data/es.json'
-import fr from 'bad-words-next/data/fr.json'
-import de from 'bad-words-next/data/de.json'
 import type { KeyInfoData } from './key-info'
 import type { KeyStore } from './key-store'
 import type { TokenBuckets } from './bucket'
@@ -13,12 +8,6 @@ import { Api } from './api'
 
 const BASE62 = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const base62 = basex(BASE62)
-const badwords = new BadWords()
-
-badwords.add(en)
-badwords.add(es)
-badwords.add(fr)
-badwords.add(de)
 
 type Input = Parameters<Handle>[0]
 
@@ -80,10 +69,9 @@ export class ApiKeys {
 		let bytes: Buffer
 
 		// create a key that is free of any bad words
-		do {
-			bytes = randomBytes(this.options.key_length ?? DEFAULT_KEY_LENGTH)
-			key = base62.encode(bytes)
-		} while (badwords.check(key))
+		
+		bytes = randomBytes(this.options.key_length ?? DEFAULT_KEY_LENGTH)
+		key = base62.encode(bytes)		
 
 		// store it using a hash of the key (so the key itself is never stored, for security)
 		// note that we don't require a salt as we can guarantee sufficient entropy (unlike a user password)

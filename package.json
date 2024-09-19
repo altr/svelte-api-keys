@@ -26,7 +26,8 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"import": "./dist/index.js"
 		}
 	},
 	"svelte": "dist/index.js",
@@ -84,7 +85,6 @@
 	},
 	"dependencies": {
 		"@robloche/chartjs-plugin-streaming": "^3.1.0",
-		"bad-words-next": "^2.3.1",
 		"base-x": "^4.0.0",
 		"chart.js": "^4.4.2",
 		"chartjs-adapter-date-fns": "^3.0.0",
