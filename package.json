@@ -50,7 +50,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"package": "tsup && publint",
-		"prepublishOnly": "npm run package",
+		"prepublishOnly": "pnpm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
@@ -58,7 +58,7 @@
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
 		"emulators:start": "firebase emulators:start --import ./snapshot --export-on-exit --project demo-project",
-		"prepare": "npm run package"
+		"prepare": "pnpm run package"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.8",
