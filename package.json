@@ -1,7 +1,7 @@
 {
 	"name": "svelte-api-keys",
 	"description": "API Key Generation, Validation, and Rate Limiting for SvelteKit",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"keywords": [
 		"svelte",
 		"sveltekit",
@@ -58,7 +58,7 @@
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
 		"emulators:start": "firebase emulators:start --import ./snapshot --export-on-exit --project demo-project",
-		"prepare": "pnpm run package"
+		"prepare": "npm run package"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^3.0.8",
