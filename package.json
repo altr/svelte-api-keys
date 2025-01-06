@@ -1,7 +1,7 @@
 {
 	"name": "svelte-api-keys",
 	"description": "API Key Generation, Validation, and Rate Limiting for SvelteKit",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"keywords": [
 		"svelte",
 		"sveltekit",
@@ -50,7 +50,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"package": "tsup && publint",
-		"prepublishOnly": "pnpm run package",
+		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
